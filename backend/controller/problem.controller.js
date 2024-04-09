@@ -14,7 +14,7 @@ const compareOutput = (stdout, testCases) => {
     console.log(output)
     let i = 0;
     testCases.forEach((obj) => {
-        if (output[i] != obj.output) {
+        if (output[i] != obj.output.replace(/\[|\]|,/g, '').replace(/\s+/g, ' ').trim()) {
             ans = false;
         }
         i++;
