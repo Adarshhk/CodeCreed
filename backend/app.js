@@ -7,7 +7,8 @@ import path from 'path'
 import cors from 'cors';
 
 const app = express();
-const __dirname = path.resolve();
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 app.use(cors({
     origin : '*'
 }))
